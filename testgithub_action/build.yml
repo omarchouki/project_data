@@ -1,6 +1,25 @@
-on : push
-  jobs : 
-    first-job : 
-      steps : 
-        - run : node --version
-        - run : npm --version 
+name: Test GitHub Action
+
+# Déclenche le workflow à chaque push sur la branche main (ou master)
+on:
+  push:
+    branches:
+      - main
+
+# Définit les jobs qui seront exécutés
+jobs:
+  test:
+    # Spécifie que le job s'exécute sur un environnement Windows
+    runs-on: windows-latest
+
+    # Les étapes à exécuter
+    steps:
+      # Vérifie le dépôt avec une action préconfigurée de GitHub
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Exécute une commande PowerShell simple
+      - name: Run a PowerShell script
+        run: |
+          Write-Host "Hello, World! GitHub Actions is running on Windows!"
+        shell: pwsh
