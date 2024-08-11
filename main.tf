@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = "7220d97f933d35089cb3ec844b47af5c1ad9ca44"
+  credentials = file("https://storage.cloud.google.com/my-bucket-sa-test/eternal-splicer-432020-h2-7220d97f933d.json?authuser=1")
   project     = "eternal-splicer-432020-h2"
   region      = "us-central1"
 }
@@ -19,7 +19,7 @@ output "dataset_id" {
 resource "google_bigquery_table" "test_table" {
   dataset_id = google_bigquery_dataset.test_dataset.dataset_id
   table_id   = "test_table"
-  project    = "your-project-id"
+  project    = "eternal-splicer-432020-h2"
 
   schema = jsonencode([
     {
