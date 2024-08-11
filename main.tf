@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("https://storage.cloud.google.com/my-bucket-sa-test/eternal-splicer-432020-h2-7220d97f933d.json?authuser=1")
+  credentials = file("C:/Users/Chouki_Omar/Downloads/eternal-splicer-432020-h2-7220d97f933d.json")
   project     = "eternal-splicer-432020-h2"
   region      = "us-central1"
 }
