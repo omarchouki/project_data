@@ -15,3 +15,29 @@ resource "google_bigquery_dataset" "test_dataset" {
 output "dataset_id" {
   value = google_bigquery_dataset.test_dataset.dataset_id
 }
+
+resource "google_bigquery_table" "test_table" {
+  dataset_id = google_bigquery_dataset.test_dataset.dataset_id
+  table_id   = "test_table"
+  project    = "your-project-id"
+
+  schema = jsonencode([
+    {
+      "name" = "id"
+      "type" = "INTEGER"
+      "mode" = "REQUIRED"
+    },
+    {
+      "name" = "name"
+      "type" = "STRING"
+      "mode" = "NULLABLE"
+    },
+    {
+      "name" = "created_at"
+      "type" = "TIMESTAMP"
+      "mode" = "NULLABLE"
+    }
+  ])
+
+  # Vous pouvez ajouter des données de test directement à la création de la table avec des options comme 'external_data_configuration'
+}
