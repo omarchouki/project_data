@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("C:/Users/Chouki_Omar/Desktop/data_project/eternal-splicer-432020-h2-7220d97f933d.json")
+  credentials = file("eternal-splicer-432020-h2-7220d97f933d.json")
   project     = "eternal-splicer-432020-h2"
   region      = "us-central1"
 }
