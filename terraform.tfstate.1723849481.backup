@@ -1,9 +1,14 @@
 {
   "version": 4,
   "terraform_version": "1.9.4",
-  "serial": 11,
+  "serial": 14,
   "lineage": "d24263d5-9523-d559-0e98-0900e27c9288",
-  "outputs": {},
+  "outputs": {
+    "dataset_id": {
+      "value": "test_dataset_",
+      "type": "string"
+    }
+  },
   "resources": [
     {
       "mode": "managed",
@@ -87,58 +92,6 @@
           },
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "google_bigquery_table",
-      "name": "test_table",
-      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "allow_resource_tags_on_deletion": false,
-            "clustering": null,
-            "creation_time": 1723846387305,
-            "dataset_id": "test_dataset",
-            "deletion_protection": true,
-            "description": "",
-            "effective_labels": {},
-            "encryption_configuration": [],
-            "etag": "n+6KQ0c1p6dwY2S7rFX2+w==",
-            "expiration_time": 1723849987305,
-            "external_data_configuration": [],
-            "friendly_name": "",
-            "id": "projects/eternal-splicer-432020-h2/datasets/test_dataset/tables/test_table",
-            "labels": {},
-            "last_modified_time": 1723846387377,
-            "location": "US",
-            "materialized_view": [],
-            "max_staleness": "",
-            "num_bytes": 0,
-            "num_long_term_bytes": 0,
-            "num_rows": 0,
-            "project": "eternal-splicer-432020-h2",
-            "range_partitioning": [],
-            "require_partition_filter": false,
-            "resource_tags": {},
-            "schema": "[{\"mode\":\"REQUIRED\",\"name\":\"id\",\"type\":\"INTEGER\"},{\"mode\":\"NULLABLE\",\"name\":\"name\",\"type\":\"STRING\"},{\"mode\":\"NULLABLE\",\"name\":\"created_at\",\"type\":\"TIMESTAMP\"}]",
-            "self_link": "https://bigquery.googleapis.com/bigquery/v2/projects/eternal-splicer-432020-h2/datasets/test_dataset/tables/test_table",
-            "table_constraints": [],
-            "table_id": "test_table",
-            "table_replication_info": [],
-            "terraform_labels": {},
-            "time_partitioning": [],
-            "type": "TABLE",
-            "view": []
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA==",
-          "dependencies": [
-            "google_bigquery_dataset.test_dataset"
-          ]
         }
       ]
     }
