@@ -20,6 +20,7 @@ resource "google_bigquery_table" "test_table" {
   dataset_id = google_bigquery_dataset.test_dataset.dataset_id
   table_id   = "test_table"
   project    = "eternal-splicer-432020-h2"
+  deletion_protection = false
 
   schema = jsonencode([
     {
