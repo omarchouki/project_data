@@ -44,7 +44,7 @@ resource "google_bigquery_table" "test_table" {
   # Vous pouvez ajouter des données de test directement à la création de la table avec des options comme 'external_data_configuration'
 }
 
-resource "google_bigquery_table" "test_table" {
+resource "google_bigquery_table" "table_test" {
   dataset_id = google_bigquery_dataset.test_dataset.dataset_id
   table_id   = "table _test"
   project    = "eternal-splicer-432020-h2"
