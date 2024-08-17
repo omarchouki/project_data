@@ -44,3 +44,30 @@ resource "google_bigquery_table" "test_table" {
   # Vous pouvez ajouter des données de test directement à la création de la table avec des options comme 'external_data_configuration'
 }
 
+resource "google_bigquery_table" "test_table" {
+  dataset_id = google_bigquery_dataset.test_dataset.dataset_id
+  table_id   = "table _test"
+  project    = "eternal-splicer-432020-h2"
+  deletion_protection = false
+  
+
+  schema = jsonencode([
+    {
+      "name" = "id"
+      "type" = "INTEGER"
+      "mode" = "REQUIRED"
+    },
+    {
+      "name" = "name"
+      "type" = "STRING"
+      "mode" = "NULLABLE"
+    },
+    {
+      "name" = "created_at"
+      "type" = "TIMESTAMP"
+      "mode" = "NULLABLE"
+    }
+  ])
+
+  # Vous pouvez ajouter des données de test directement à la création de la table avec des options comme 'external_data_configuration'
+}
